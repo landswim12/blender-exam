@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block title %} Login {% endblock %}
+{% block body %}
+  <form action="/login" method="post">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col">
+        <div class="card border-primary" style="width: 32rem;">
+          <div class="card-body">
+            <input type="text" name="username" placeholder="Username" autocomplete="off" class="form-control"><br>
+            <input type="password" name="password" placeholder="Password" autocomplete="off" class="form-control"><br>
+            <button type="submit" class="btn btn-primary">Login</button>
+          </div>
+        </div>
+      </div>
+      <div class="col"></div>
+    </div>
+  </form>
+{% endblock %}

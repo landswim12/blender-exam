@@ -1,0 +1,289 @@
+{% extends "layout.html" %}
+{% block title %} Exam {% endblock %}
+{% block body %}
+  <form action="/exam" method="post" class="form-floating">
+    <ol class="list-group list-group-numbered">
+      <li class="list-group-item">
+        <label for="first">Select the corresponding rendering engine.</label>
+        <div id="first">
+          <label for="1A">
+            Shoots rays from the camera that bounce around the scene until they hit a light source, then generate a pixel with the
+            obtained info.
+          </label>
+          <select id="1A" name="1A" class="form-select">
+            <option value="path-tracing">Path-tracing engine</option>
+            <option value="rasterization">Raster engine</option>
+          </select>
+          <label for="1B">
+            Projects, with perspective, geometry onto the screen.
+          </label>
+          <select id="1B" name="1B" class="form-select">
+            <option value="path-tracing">Path-tracing engine</option>
+            <option value="rasterization">Raster engine</option>
+          </select>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <label for="second">Which characteristics do vertices have? Select all that apply.</label>
+        <div class="form-check" id="second">
+          <input type="checkbox" name="vertexCharacteristics" value="location" id="location" class="form-check-input">
+          <label for="location" class="form-check-label">Location</label>
+        </div>
+        <div class="form-check" id="second">
+          <input type="checkbox" name="vertexCharacteristics" value="rotaion" id="rotaion" class="form-check-input">
+          <label for="rotaion" class="form-check-label">Rotaion</label>
+        </div>
+        <div class="form-check" id="second">
+          <input type="checkbox" name="vertexCharacteristics" value="scale" id="scale" class="form-check-input">
+          <label for="scale" class="form-check-label">Scale</label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <label for="third">What is an n-gon?</label>
+        <div class="form-check" id="third">
+          <input type="radio" name="n-gon" value="3A" id="3A" class="form-check-input">
+          <label for="3A" class="form-check-label">A face.</label>
+        </div>
+        <div class="form-check" id="third">
+          <input type="radio" name="n-gon" value="3B" id="3B" class="form-check-input">
+          <label for="3B" class="form-check-label">A face with five vertices and edges.</label>
+        </div>
+        <div class="form-check" id="third">
+          <input type="radio" name="n-gon" value="3C" id="3C" class="form-check-input">
+          <label for="3C" class="form-check-label">A face with more than four vertices and edges</label>
+        </div>
+        <div class="form-check" id="third">
+          <input type="radio" name="n-gon" value="3D" id="3D" class="form-check-input">
+          <label for="3D" class="form-check-label">A face with more than four vertices and any quantity of edges</label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <label for="fourth">Select the corresponding type of light.</label>
+        <div id="fourth">
+          <label for="4A">
+            Sheds light towards all directions from it's spherical origin.
+          </label>
+          <select id="4A" name="4A" class="form-select">
+            <option value="point">Point</option>
+            <option value="spot">Spot</option>
+            <option value="area">Area</option>
+            <option value="sun">Sun</option>
+          </select>
+          <label for="4B">
+            Sheds light from a 2D shape.
+          </label>
+          <select id="4B" name="4B" class="form-select">
+            <option value="point">Point</option>
+            <option value="spot">Spot</option>
+            <option value="area">Area</option>
+            <option value="sun">Sun</option>
+          </select>
+          <label for="4C">
+            Sheds cone shaped light from a spherical origin.
+          </label>
+          <select id="4C" name="4C" class="form-select">
+            <option value="point">Point</option>
+            <option value="spot">Spot</option>
+            <option value="area">Area</option>
+            <option value="sun">Sun</option>
+          </select>
+          <label for="4D">
+            Lights the entire scene from a direction.
+          </label>
+          <select id="4D" name="4D" class="form-select">
+            <option value="point">Point</option>
+            <option value="spot">Spot</option>
+            <option value="area">Area</option>
+            <option value="sun">Sun</option>
+          </select>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <label for="fifth">Enter the corresponding quantity</label>
+        <div id="fifth">
+          <label for="vertex">How many vertices are edges made of?:</label>
+          <input type="number" name="vertex-quantity" id="vertex"><br>
+          <label for="face">What is the minimun edge quantity of a face?:</label>
+          <input type="number" name="edge-quantity" id="face"><br>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <label for="sixth">Select the corresponding key combinations to do the following in the 3D viewport</label>
+        <div id="sixth">
+          <label for="6A">
+            Dolly zoom.
+          </label>
+          <select id="6A" name="6A" class="form-select">
+            <option value="shift">MMB + Shift</option>
+            <option value="ctrl">MMB + Ctrl</option>
+            <option value="mmb">MMB</option>
+          </select>
+          <label for="6B">
+            Pivot.
+          </label>
+          <select id="6B" name="6B" class="form-select">
+            <option value="shift">MMB + Shift</option>
+            <option value="ctrl">MMB + Ctrl</option>
+            <option value="mmb">MMB</option>
+          </select>
+          <label for="6C">
+            Pan around.
+          </label>
+          <select id="6C" name="6C" class="form-select">
+            <option value="shift">MMB + Shift</option>
+            <option value="ctrl">MMB + Ctrl</option>
+            <option value="mmb">MMB</option>
+          </select>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <label for="seventh">Select the corresponding Blender features.</label>
+        <div id="seventh">
+          <label for="7A">
+            Involves keyframes.
+          </label>
+          <select id="7A" name="7A" class="form-select">
+            <option value="modelling">Modelling</option>
+            <option value="sculpting">Sculpting</option>
+            <option value="shading">Shading</option>
+            <option value="uv">UV editing</option>
+            <option value="animation">Animation</option>
+            <option value="simulation">Simulation</option>
+            <option value="rendering">Rendering</option>
+          </select>
+          <label for="7B">
+            Temporaly stores in memory.
+          </label>
+          <select id="7B" name="7B" class="form-select">
+            <option value="modelling">Modelling</option>
+            <option value="sculpting">Sculpting</option>
+            <option value="shading">Shading</option>
+            <option value="uv">UV editing</option>
+            <option value="animation">Animation</option>
+            <option value="simulation">Simulation</option>
+            <option value="rendering">Rendering</option>
+          </select>
+          <label for="7C">
+            For adjusting how objects will be rendered.
+          </label>
+          <select id="7C" name="7C" class="form-select">
+            <option value="modelling">Modelling</option>
+            <option value="sculpting">Sculpting</option>
+            <option value="shading">Shading</option>
+            <option value="uv">UV editing</option>
+            <option value="animation">Animation</option>
+            <option value="simulation">Simulation</option>
+            <option value="rendering">Rendering</option>
+          </select>
+          <label for="7D">
+            Better suited for editing irregular, organic objects.
+          </label>
+          <select id="7D" name="7D" class="form-select">
+            <option value="modelling">Modelling</option>
+            <option value="sculpting">Sculpting</option>
+            <option value="shading">Shading</option>
+            <option value="uv">UV editing</option>
+            <option value="animation">Animation</option>
+            <option value="simulation">Simulation</option>
+            <option value="rendering">Rendering</option>
+          </select>
+          <label for="7E">
+            Generates the final image.
+          </label>
+          <select id="7E" name="7E" class="form-select">
+            <option value="modelling">Modelling</option>
+            <option value="sculpting">Sculpting</option>
+            <option value="shading">Shading</option>
+            <option value="uv">UV editing</option>
+            <option value="animation">Animation</option>
+            <option value="simulation">Simulation</option>
+            <option value="rendering">Rendering</option>
+          </select>
+          <label for="7F">
+            Better suited for editing symmetrical, artificial objects.
+          </label>
+          <select id="7F" name="7F" class="form-select">
+            <option value="modelling">Modelling</option>
+            <option value="sculpting">Sculpting</option>
+            <option value="shading">Shading</option>
+            <option value="uv">UV editing</option>
+            <option value="animation">Animation</option>
+            <option value="simulation">Simulation</option>
+            <option value="rendering">Rendering</option>
+          </select>
+          <label for="7G">
+            For adjusting how textures will be wrapped around an object.
+          </label>
+          <select id="7G" name="7G" class="form-select">
+            <option value="modelling">Modelling</option>
+            <option value="sculpting">Sculpting</option>
+            <option value="shading">Shading</option>
+            <option value="uv">UV editing</option>
+            <option value="animation">Animation</option>
+            <option value="simulation">Simulation</option>
+            <option value="rendering">Rendering</option>
+          </select>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <label for="eigth">What does IOR stand for?</label>
+        <div class="form-check" id="eigth">
+          <input type="radio" name="acronym" value="8A" id="8A" class="form-check-input">
+          <label for="8A" class="form-check-label">Index of reflection.</label>
+        </div>
+        <div class="form-check" id="eigth">
+          <input type="radio" name="acronym" value="8B" id="8B" class="form-check-input">
+          <label for="8B" class="form-check-label">Index of refraction.</label>
+        </div>
+        <div class="form-check" id="eigth">
+          <input type="radio" name="acronym" value="8C" id="8C" class="form-check-input">
+          <label for="8C" class="form-check-label">Incidence of reflection.</label>
+        </div>
+        <div class="form-check" id="eigth">
+          <input type="radio" name="acronym" value="8D" id="8D" class="form-check-input">
+          <label for="8D" class="form-check-label">Incidence of refraction.</label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <label for="nineth">In the viewport, objects are outlined to indicate they're selected. What is the color of the outline?</label>
+        <div class="form-check">
+          <input type="radio" name="color" value="9A" id="9A" class="form-check-input">
+          <label for="9A" class="form-check-label">Blue.</label>
+        </div>
+        <div class="form-check">
+          <input type="radio" name="color" value="9B" id="9B" class="form-check-input">
+          <label for="9B" class="form-check-label">Red.</label>
+        </div>
+        <div class="form-check">
+          <input type="radio" name="color" value="9C" id="9C" class="form-check-input">
+          <label for="9C" class="form-check-label">Yellow.</label>
+        </div>
+        <div class="form-check">
+          <input type="radio" name="color" value="9D" id="9D" class="form-check-input">
+          <label for="9D" class="form-check-label">Orange.</label>
+        </div>
+      </li>
+
+      <li class="list-group-item">
+        <label for="form-check">Which company developed Blender?</label>
+        <div class="form-check-label">
+          <input type="radio" name="company" value="10A" id="10A" class="form-check-input">
+          <label for="10A" class="form-check-label">Blender Foundation.</label>
+        </div>
+        <div class="form-check-label">
+          <input type="radio" name="company" value="10B" id="10B" class="form-check-input">
+          <label for="10B" class="form-check-label">Alias Systems Corporation.</label>
+        </div>
+        <div class="form-check-label">
+          <input type="radio" name="company" value="10C" id="10C" class="form-check-input">
+          <label for="10C" class="form-check-label">MAXON Computer.</label>
+        </div>
+        <div class="form-check-label">
+          <input type="radio" name="company" value="10D" id="10D" class="form-check-input">
+          <label for="10D" class="form-check-label">Side Effects Software Inc.</label>
+        </div>
+      </li>
+    </ol>
+    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+  </form>
+{% endblock %}
